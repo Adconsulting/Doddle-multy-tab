@@ -1,0 +1,13 @@
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\ADC.DoddleTest.exe.config
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\ADC.DoddleTest.exe
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\ADC.DoddleTest.pdb
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\ClosedXML.dll
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\DocumentFormat.OpenXml.dll
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\DoddleReport.dll
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\DoddleReport.OpenXml.dll
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\ClosedXML.xml
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\DoddleReport.pdb
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\DoddleReport.OpenXml.pdb
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.csprojResolveAssemblyReference.cache
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.exe
+C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.pdb
