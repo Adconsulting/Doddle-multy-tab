@@ -11,3 +11,16 @@ C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\bin\Debug\DoddleRepo
 C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.csprojResolveAssemblyReference.cache
 C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.exe
 C:\@TFS\tfs.ris.be\E-Commerce\ADC.DoddleTest\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.pdb
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\ADC.DoddleTest.exe.config
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.exe
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.pdb
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\ADC.DoddleTest.exe
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\ADC.DoddleTest.pdb
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\ClosedXML.dll
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\DoddleReport.dll
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\DoddleReport.OpenXml.dll
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\ClosedXML.xml
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\DoddleReport.pdb
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\bin\Debug\DoddleReport.OpenXml.pdb
+C:\Data\Github\Doddle-multy-tab\ADC.DoddleTest\obj\Debug\ADC.DoddleTest.csprojResolveAssemblyReference.cache

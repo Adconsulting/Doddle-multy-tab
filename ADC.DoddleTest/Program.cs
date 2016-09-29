@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,34 @@ namespace ADC.DoddleTest
     class Program
     {
         static void Main(string[] args)
+        {
+            
+            //Create multitab excel
+            //DoddleMultiTab();
+            //Create excel based on a List<dynamic>
+            DoddleDynamic();
+
+
+        }
+
+        private static void DoddleDynamic()
+        {
+            var list = GetDynamicList();
+
+            var mainreport = new Report(list.ToReportSource(), new ExcelReportWriter());
+            mainreport.RenderHints["SheetName"] = "dynamic";
+
+
+            mainreport.DataFields["Col1"].HeaderText = "Col - 1";
+            var writer = new ExcelReportWriter();
+
+            using (var sr = new StreamWriter(@"c:\temp\dynamic-report.xlsx"))
+            {
+                writer.WriteReport(mainreport, sr.BaseStream);
+            }
+        }
+
+        private static void DoddleMultiTab()
         {
             var list1 = GenerateList(4);
             var list2 = GenerateLargeList(150);
@@ -33,12 +62,8 @@ namespace ADC.DoddleTest
 
             using (var sr = new StreamWriter(@"c:\temp\report.xlsx"))
             {
-                writer.WriteReport(mainreport,sr.BaseStream);
+                writer.WriteReport(mainreport, sr.BaseStream);
             }
-
-            
-
-
         }
 
         private static List<AdcObject> GenerateList(int nrOfItems)
@@ -79,6 +104,36 @@ namespace ADC.DoddleTest
             }
             return list;
 
-        } 
+        }
+
+        private static List<ExpandoObject> GetDynamicList()
+        {
+            var retVal = new List<ExpandoObject>();
+
+            dynamic val1 = new ExpandoObject();
+            val1.Col1 = "col1 content";
+            val1.Col2 = "col2 content";
+
+            dynamic val2 = new ExpandoObject();
+            val2.Col1 = "col1 content";
+            val2.Col2 = "col2 content";
+
+            dynamic val3 = new ExpandoObject();
+            val3.Col1 = "col1 content";
+            val3.Col2 = "col2 content";
+
+            dynamic val4 = new ExpandoObject();
+            val4.Col1 = "col1 content";
+            val4.Col2 = "col2 content";
+            val4.Col3 = "col3 content";
+
+            retVal.Add(val4);
+            retVal.Add(val2);
+            retVal.Add(val3);
+            retVal.Add(val1);
+
+
+            return retVal;
+        }
     }
 }
