@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ADC.DoddleTest.Infrastructure.Extensions;
 using DoddleReport;
 using DoddleReport.OpenXml;
 
@@ -18,8 +19,9 @@ namespace ADC.DoddleTest
             //Create multitab excel
             //DoddleMultiTab();
             //Create excel based on a List<dynamic>
-            DoddleDynamic();
-
+            //DoddleDynamic();
+            //Create excel based on a list<array>
+            DoddleStringArrayList();
 
         }
 
@@ -35,6 +37,26 @@ namespace ADC.DoddleTest
             var writer = new ExcelReportWriter();
 
             using (var sr = new StreamWriter(@"c:\temp\dynamic-report.xlsx"))
+            {
+                writer.WriteReport(mainreport, sr.BaseStream);
+            }
+        }
+
+        private static void DoddleStringArrayList()
+        {
+            var list = GetArrayList(10);
+
+            var headers = new List<KeyValuePair<string,string>>();
+            headers.Add(new KeyValuePair<string, string>("Datum", new DateTime().ToString("dd/MM/yyyy")));
+
+           var mainreport = list.Export()
+                .Column("col 1", x => x[0])
+                .Column("Col 2", x => x[1]).ToReport(headers);
+
+            mainreport.RenderHints["SheetName"] = "string-array";
+            var writer = new ExcelReportWriter();
+
+            using (var sr = new StreamWriter(@"c:\temp\string-array-report.xlsx"))
             {
                 writer.WriteReport(mainreport, sr.BaseStream);
             }
@@ -134,6 +156,18 @@ namespace ADC.DoddleTest
 
 
             return retVal;
+        }
+
+        private static List<string[]> GetArrayList(int nrOfItems)
+        {
+            var list = new List<string[]>();
+
+            for (int i = 0; i < nrOfItems; i++)
+            {
+                list.Add(new string[] {$"row {i}", "string 1", "string 2", "string 3"});
+            }
+
+            return list;
         }
     }
 }

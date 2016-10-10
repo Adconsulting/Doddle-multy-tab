@@ -56,6 +56,12 @@
   <ItemGroup>
     <Compile Include="AdcLargerObject.cs" />
     <Compile Include="AdcObject.cs" />
+    <Compile Include="Infrastructure\Builder\ExportBuilder.cs" />
+    <Compile Include="Infrastructure\Builder\ExportColumn.cs" />
+    <Compile Include="Infrastructure\Builder\IExportColumn.cs" />
+    <Compile Include="Infrastructure\DoddleExporter.cs" />
+    <Compile Include="Infrastructure\Extensions\ExtensionsForMemberInfo.cs" />
+    <Compile Include="Infrastructure\Extensions\ExtensionsForIEnumerable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
