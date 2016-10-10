@@ -15,7 +15,7 @@ namespace ADC.DoddleTest
     {
         static void Main(string[] args)
         {
-            
+
             //Create multitab excel
             //DoddleMultiTab();
             //Create excel based on a List<dynamic>
@@ -44,15 +44,28 @@ namespace ADC.DoddleTest
 
         private static void DoddleStringArrayList()
         {
-            var list = GetArrayList(10);
+            string[] header;
+            var list = GetArrayList(10, out header);
 
-            var headers = new List<KeyValuePair<string,string>>();
+            var headers = new List<KeyValuePair<string, string>>();
             headers.Add(new KeyValuePair<string, string>("Datum", new DateTime().ToString("dd/MM/yyyy")));
 
-           var mainreport = list.Export()
-                .Column("col 1", x => x[0])
-                .Column("Col 2", x => x[1]).ToReport(headers);
+            var export = list.Export();
 
+            var cols = list.First();
+
+            for (int i = 0; i < header.Length ; i++)
+            {
+                var i1 = i;
+                export = export.Column($"{header[i1]}", x => x[i1]);
+            }
+
+
+
+
+            //.Column("col 1", x => x[0])
+            //.Column("Col 2", x => x[1]).ToReport(headers);
+            var mainreport = export.ToReport(null);
             mainreport.RenderHints["SheetName"] = "string-array";
             var writer = new ExcelReportWriter();
 
@@ -158,14 +171,16 @@ namespace ADC.DoddleTest
             return retVal;
         }
 
-        private static List<string[]> GetArrayList(int nrOfItems)
+        private static List<string[]> GetArrayList(int nrOfItems, out string[] header)
         {
             var list = new List<string[]>();
 
             for (int i = 0; i < nrOfItems; i++)
             {
-                list.Add(new string[] {$"row {i}", "string 1", "string 2", "string 3"});
+                list.Add(new string[] { $"row {i}", "string 1", "string 2", "string 3", "string 4" });
             }
+
+            header = new List<string> {"Rij", "tekst 1", "tekst 2", "tekst 3", "tekst 4"}.ToArray();
 
             return list;
         }
