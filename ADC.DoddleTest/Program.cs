@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using ADC.DoddleTest.Infrastructure.Extensions;
 using DoddleReport;
 using DoddleReport.OpenXml;
@@ -17,11 +18,32 @@ namespace ADC.DoddleTest
         {
 
             //Create multitab excel
-            //DoddleMultiTab();
+            DoddleMultiTab();
             //Create excel based on a List<dynamic>
             //DoddleDynamic();
             //Create excel based on a list<array>
-            DoddleStringArrayList();
+            //DoddleStringArrayList();
+
+        }
+
+        private static void BuildExcel()
+        {
+            var list = GenerateLargeList(50);
+
+            var writer = new ExcelReportWriter();
+            var report = list.Export()
+                .Column("Naam 1", x => x.Param1)
+                .Column("naam 2", x => x.Param2).ToReport(null, new ExcelReportWriter());
+
+            
+
+            var stream = new MemoryStream();
+
+            writer.WriteReport(report, stream);
+
+            stream.Seek(0, SeekOrigin.Begin);
+
+            return File(stream, "application/vnd.ms-excel", string.Format(@"{0}-{1}.xlsx", ));
 
         }
 
