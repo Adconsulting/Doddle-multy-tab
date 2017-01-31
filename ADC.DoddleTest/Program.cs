@@ -36,15 +36,10 @@ namespace ADC.DoddleTest
                 .Column("naam 2", x => x.Param2).ToReport(null, new ExcelReportWriter());
 
             
-
-            var stream = new MemoryStream();
-
-            writer.WriteReport(report, stream);
-
-            stream.Seek(0, SeekOrigin.Begin);
-
-            return File(stream, "application/vnd.ms-excel", string.Format(@"{0}-{1}.xlsx", ));
-
+            using (var sr = new StreamWriter(@"c:\temp\builder-report.xlsx"))
+            {
+                writer.WriteReport(report, sr.BaseStream);
+            }
         }
 
         private static void DoddleDynamic()
